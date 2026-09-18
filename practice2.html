@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Control</title>
+</head>
+<body>
+    <p id="myParagraph" style="border: 5px solid black; padding: 10px; width: 300px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is some
+        dummy text to demonstrate color and border control.
+    </p>
+
+    <label>Text Color (RGB, e.g. 255,0,0): <input type="text" id="textColor"></label><br><br>
+    <label>Border Color (RGB): <input type="text" id="borderColor"></label><br><br>
+    <label>Border Width (px): <input type="text" id="borderWidth"></label><br><br>
+    <button onclick="applyStyles()">Apply</button>
+
+    <script>
+        function applyStyles() {
+            const p = document.getElementById("myParagraph");
+            const textColor = document.getElementById("textColor").value;
+            const borderColor = document.getElementById("borderColor").value;
+            const borderWidth = document.getElementById("borderWidth").value;
+
+            if (textColor) p.style.color = "rgb(" + textColor + ")";
+            if (borderColor) p.style.borderColor = "rgb(" + borderColor + ")";
+            if (borderWidth) p.style.borderWidth = borderWidth + "px";
+        }
+    </script>
+</body>
+</html>
